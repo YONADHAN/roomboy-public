@@ -21,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ];
 
     // Dynamic Routes (Properties)
-    const properties = await propertyService.getPublicProperties();
+    const { data: properties } = await propertyService.getPublicProperties();
     const propertyRoutes: MetadataRoute.Sitemap = properties.map((property) => ({
         url: `${baseUrl}/properties/${property.propertyId}`,
         lastModified: new Date(), // Ideally this would come from property.updatedAt
