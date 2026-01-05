@@ -33,23 +33,23 @@ export default function Pagination({ meta }: PaginationProps) {
             <button
                 onClick={() => handlePageChange(page - 1)}
                 disabled={page === 1}
-                className="p-2 border border-neutral-200 rounded-lg hover:bg-neutral-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="p-2 border border-border rounded-lg hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-foreground"
                 aria-label="Previous Page"
             >
-                <ChevronLeft size={20} className="text-neutral-600" />
+                <ChevronLeft size={20} className="text-muted-foreground" />
             </button>
 
-            <span className="text-sm font-medium text-neutral-700 px-4">
+            <span className="text-sm font-medium text-foreground px-4">
                 Page {page} of {totalPages}
             </span>
 
             <button
                 onClick={() => handlePageChange(page + 1)}
                 disabled={page === totalPages}
-                className="p-2 border border-neutral-200 rounded-lg hover:bg-neutral-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="p-2 border border-border rounded-lg hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-foreground"
                 aria-label="Next Page"
             >
-                <ChevronRight size={20} className="text-neutral-600" />
+                <ChevronRight size={20} className="text-muted-foreground" />
             </button>
         </div>
     );

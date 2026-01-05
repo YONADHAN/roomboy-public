@@ -4,12 +4,12 @@ import { ArrowRight } from 'lucide-react';
 
 export default function CallToAction() {
     return (
-        <section className="py-24 bg-white text-center">
+        <section className="py-24 bg-background text-center">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl md:text-5xl font-black text-neutral-900 mb-6 tracking-tight">
+                <h2 className="text-3xl md:text-5xl font-black text-foreground mb-6 tracking-tight">
                     Looking for a place to stay?
                 </h2>
-                <p className="text-lg text-neutral-500 max-w-2xl mx-auto mb-10">
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
                     Find verified options curated by your trusted local broker.
                 </p>
                 <Link

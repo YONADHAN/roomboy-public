@@ -18,7 +18,7 @@ export default function SearchLayout({ children, fieldDefinitions }: { children:
                 <div className="flex gap-3 w-full lg:w-auto lg:flex-1">
                     <button
                         onClick={() => setMobileFiltersOpen(true)}
-                        className="lg:hidden flex items-center justify-center px-4 py-3 bg-white border border-neutral-200 rounded-xl text-neutral-900 font-semibold shadow-sm hover:bg-neutral-50"
+                        className="lg:hidden flex items-center justify-center px-4 py-3 bg-card border border-border rounded-xl text-foreground font-semibold shadow-sm hover:bg-muted"
                     >
                         <Filter size={20} />
                     </button>

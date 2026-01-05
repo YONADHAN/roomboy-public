@@ -21,21 +21,21 @@ export default function HowItWorks() {
     ];
 
     return (
-        <section className="py-20 bg-white border-t border-neutral-100">
+        <section className="py-20 bg-background border-t border-border">
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h2 className="text-3xl font-bold text-neutral-900 mb-4">How Roomboy Works</h2>
-                    <p className="text-neutral-500">Simple, transparent, and direct. Get settled in 3 easy steps.</p>
+                    <h2 className="text-3xl font-bold text-foreground mb-4">How Roomboy Works</h2>
+                    <p className="text-muted-foreground">Simple, transparent, and direct. Get settled in 3 easy steps.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
                     {steps.map((step, idx) => (
                         <div key={idx} className="flex flex-col items-center text-center group">
-                            <div className="w-16 h-16 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-sm">
+                            <div className="w-16 h-16 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-sm dark:bg-indigo-900/30 dark:text-indigo-400">
                                 <step.icon size={32} strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-xl font-bold text-neutral-900 mb-3">{step.title}</h3>
-                            <p className="text-neutral-500 leading-relaxed px-4">
+                            <h3 className="text-xl font-bold text-foreground mb-3">{step.title}</h3>
+                            <p className="text-muted-foreground leading-relaxed px-4">
                                 {step.description}
                             </p>
 

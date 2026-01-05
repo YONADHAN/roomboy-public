@@ -27,10 +27,10 @@ export default function PropertyCard({ property }: Props) {
     return (
         <Link
             href={`/properties/${property.propertyId}`}
-            className="group block bg-white border border-neutral-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col"
+            className="group block bg-card border border-border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col"
         >
             {/* Image Section */}
-            <div className="aspect-[4/3] bg-neutral-100 relative overflow-hidden">
+            <div className="aspect-[4/3] bg-muted relative overflow-hidden">
                 {property.mainImage ? (
                     <img
                         src={property.mainImage}
@@ -38,27 +38,27 @@ export default function PropertyCard({ property }: Props) {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                 ) : (
-                    <div className="w-full h-full flex items-center justify-center text-neutral-400">
+                    <div className="w-full h-full flex items-center justify-center text-muted-foreground">
                         <ImageIcon size={32} className="opacity-50" />
                     </div>
                 )}
 
                 {/* Status Badge */}
-                <div className="absolute top-3 left-3 bg-white/90 backdrop-blur text-neutral-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
+                <div className="absolute top-3 left-3 bg-white/90 backdrop-blur text-neutral-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm dark:bg-black/80 dark:text-white">
                     {propertyType}
                 </div>
 
                 {/* Price Tag */}
-                <div className="absolute bottom-3 right-3 bg-neutral-900 text-white px-4 py-2 rounded-xl text-sm font-bold shadow-lg">
-                    {formattedPrice}<span className="text-xs font-normal opacity-80 text-neutral-300">/mo</span>
+                <div className="absolute bottom-3 right-3 bg-neutral-900 text-white px-4 py-2 rounded-xl text-sm font-bold shadow-lg dark:bg-white dark:text-black">
+                    {formattedPrice}<span className="text-xs font-normal opacity-80 text-neutral-300 dark:text-neutral-600">/mo</span>
                 </div>
             </div>
 
             {/* Content Section */}
             <div className="p-5 flex flex-col flex-1">
                 {/* Location */}
-                <div className="flex items-center text-neutral-500 mb-2">
-                    <MapPin size={14} className="text-indigo-600 mr-1.5" />
+                <div className="flex items-center text-muted-foreground mb-2">
+                    <MapPin size={14} className="text-indigo-600 mr-1.5 dark:text-indigo-400" />
                     <span className="text-xs font-medium uppercase tracking-wide truncate">
                         {property.location.city}
                         {property.location.address && `, ${property.location.address}`}
@@ -66,33 +66,33 @@ export default function PropertyCard({ property }: Props) {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-neutral-900 leading-snug mb-4 group-hover:text-indigo-600 transition-colors line-clamp-2">
+                <h3 className="text-lg font-bold text-foreground leading-snug mb-4 group-hover:text-indigo-600 transition-colors line-clamp-2 dark:group-hover:text-indigo-400">
                     {property.title}
                 </h3>
 
                 {/* Features Divider */}
-                <div className="mt-auto border-t border-dashed border-neutral-200 pt-4">
+                <div className="mt-auto border-t border-dashed border-border pt-4">
                     <div className="grid grid-cols-2 gap-y-3 gap-x-4">
                         {/* Feature 1: Room Type */}
                         {roomType && (
-                            <div className="flex items-center text-neutral-600">
-                                <Bed size={16} className="text-neutral-400 mr-2" />
+                            <div className="flex items-center text-muted-foreground">
+                                <Bed size={16} className="text-muted-foreground/70 mr-2" />
                                 <span className="text-sm font-medium">{roomType}</span>
                             </div>
                         )}
 
                         {/* Feature 2: Furnishing */}
                         {furnishing && (
-                            <div className="flex items-center text-neutral-600">
-                                <Zap size={16} className="text-neutral-400 mr-2" />
+                            <div className="flex items-center text-muted-foreground">
+                                <Zap size={16} className="text-muted-foreground/70 mr-2" />
                                 <span className="text-sm font-medium">{furnishing}</span>
                             </div>
                         )}
 
                         {/* Feature 3: Tenants */}
                         {tenants && (
-                            <div className="flex items-center text-neutral-600 col-span-2">
-                                <Users size={16} className="text-neutral-400 mr-2 flex-shrink-0" />
+                            <div className="flex items-center text-muted-foreground col-span-2">
+                                <Users size={16} className="text-muted-foreground/70 mr-2 flex-shrink-0" />
                                 <span className="text-sm font-medium truncate">{tenants}</span>
                             </div>
                         )}

@@ -52,8 +52,8 @@ export default async function LocationsPage() {
     return (
         <section className="container mx-auto px-4 py-12">
             <header className="mb-10 text-center max-w-2xl mx-auto">
-                <h1 className="text-3xl font-bold text-neutral-900 mb-3 tracking-tight">Locations</h1>
-                <p className="text-neutral-500">Choose your preferred location to see available properties in that area.</p>
+                <h1 className="text-3xl font-bold text-neutral-900 dark:text-white mb-3 tracking-tight">Locations</h1>
+                <p className="text-muted-foreground">Choose your preferred location to see available properties in that area.</p>
             </header>
             <nav>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -61,13 +61,13 @@ export default async function LocationsPage() {
                         <li key={location.locationId} className="group">
                             <Link
                                 href={`/properties?location=${location.slug}`}
-                                className="block h-full p-6 bg-white border border-neutral-200 rounded-xl hover:border-neutral-300 hover:shadow-md transition-all duration-200"
+                                className="block h-full p-6 bg-card border border-border rounded-xl hover:border-muted-foreground/50 hover:shadow-md transition-all duration-200"
                             >
                                 <div className="flex flex-col h-full">
-                                    <h2 className="text-lg font-semibold text-neutral-900 mb-1 group-hover:text-blue-600 transition-colors">
+                                    <h2 className="text-lg font-semibold text-foreground mb-1 group-hover:text-blue-600 transition-colors">
                                         {location.name}
                                     </h2>
-                                    <p className="text-neutral-500 text-sm mt-auto">
+                                    <p className="text-muted-foreground text-sm mt-auto">
                                         {location.state}
                                     </p>
                                 </div>
