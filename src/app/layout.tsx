@@ -1,7 +1,28 @@
+import type { Metadata } from "next";
+import "./globals.css";
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+import { ClientShell } from '@/components/layout/ClientShell';
+
+export const metadata: Metadata = {
+  title: "Roomboy",
+  description: "Find your perfect room",
+};
+
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
-  return children
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className="flex flex-col min-h-screen bg-white text-neutral-900 font-sans antialiased">
+        <ClientShell>
+          <Header />
+          <main className="flex-1 w-full">{children}</main>
+          <Footer />
+        </ClientShell>
+      </body>
+    </html>
+  );
 }
